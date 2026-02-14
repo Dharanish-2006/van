@@ -60,3 +60,55 @@ setInterval(spawnHeart,500);
 for(let i=0;i<12;i++){
     setTimeout(spawnHeart,i*200);
 }
+/* ---------- MEMORY SWIPE SYSTEM ---------- */
+
+const track=document.querySelector(".memory-track");
+
+if(track){
+
+let index=0;
+let startX=0;
+let dragging=false;
+
+function updateSlide(){
+    track.style.transform=`translateX(-${index*100}%)`;
+}
+
+function nextMem(){
+    index++;
+    if(index>track.children.length-1) index=0;
+    updateSlide();
+}
+
+function prevMem(){
+    index--;
+    if(index<0) index=track.children.length-1;
+    updateSlide();
+}
+
+/* TOUCH */
+track.addEventListener("touchstart",e=>{
+    startX=e.touches[0].clientX;
+});
+
+track.addEventListener("touchend",e=>{
+    const diff=e.changedTouches[0].clientX-startX;
+    if(diff>60) prevMem();
+    if(diff<-60) nextMem();
+});
+
+/* MOUSE DRAG */
+track.addEventListener("mousedown",e=>{
+    dragging=true;
+    startX=e.clientX;
+});
+
+window.addEventListener("mouseup",e=>{
+    if(!dragging) return;
+    dragging=false;
+    const diff=e.clientX-startX;
+    if(diff>60) prevMem();
+    if(diff<-60) nextMem();
+});
+
+}

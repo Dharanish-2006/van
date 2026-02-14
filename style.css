@@ -179,3 +179,28 @@ button:hover{
     opacity:1;
     transform:translateY(0);
 }
+/* ---------- MEMORY SLIDER ---------- */
+
+.memory-slider{
+    width:100%;
+    overflow:hidden;
+    margin-top:10px;
+    border-radius:14px;
+}
+
+.memory-track{
+    display:flex;
+    transition:transform .45s cubic-bezier(.22,1,.36,1);
+}
+
+.memory-track img{
+    width:100%;
+    flex-shrink:0;
+    border-radius:14px;
+}
+
+.swipe-hint{
+    font-size:13px;
+    opacity:.6;
+    margin-top:8px;
+}
