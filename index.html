@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-hearts"></div>
+
+<div class="card" id="card">
+    <!-- STEP 1 -->
+    <div class="step active">
+        <img src="assets/gift.gif" class="gif">
+        <h1>Hey Sastha</h1>
+        <p>This Valentine, I made a little something special for you.</p>
+        <button onclick="next()">Open it</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step">
+        <h1>Why you?</h1>
+        <div class="hearts">
+            <div class="heart">You make me smile</div>
+            <div class="heart">I love being with you</div>
+            <div class="heart">You are my favorite</div>
+            <div class="heart">Forever mine</div>
+        </div>
+        <button onclick="next()">Continue</button>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step">
+        <h1>Memories</h1>
+        <img src="assets/img.png" class="photo"> <br>
+        <button onclick="next()">Continue</button>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step">
+        <img src="assets/shy.gif" class="gif">
+        <h1>Will you be my Valentine?</h1>
+        <button onclick="yes()">YES!</button>
+        <button class="no" onmouseover="move(this)">No thanks</button>
+    </div>
+<!-- FINAL MESSAGE CARD -->
+<div class="step">
+
+    <div class="final-card" onclick="openLetter(this)">
+
+        <div class="cover"></div>
+
+        <img src="assets/cover.jpg" class="photo">
+
+        <div class="letter-text">
+I don’t know how to put everything into words,
+but I know this much.
+
+You make my days lighter,
+my smiles easier,
+and my heart calmer.
+
+Whatever this is between us,
+it means more than I can say.
+
+Happy Valentine’s Day, my Cutiepie ❤️
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="assets/music.mpeg" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
